@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: "faisal", defaultValue: "faisal", description: "Who are you?")
+        booleanParam(name: "ismale", defaultValue: true, description: "Are you male?")
+        choice(name: "city", choices: ['nanded', 'nagpur', 'mumbai', 'pune'], description: "Select your city")
+    }
+    environment {
+        name = 'faisal'
+    }
+    stages {
+        stage("build") {
+            steps {
+                echo "This is the building stage"
+            }           
+        }
+        stage("test") {
+            steps {
+                echo "This is the testing stage"
+            }
+        }
+        stage("variable") {
+            steps {
+                echo "My name is ${env.name}"
+            }
+        }
+        stage("deploy-on-prod") {
+            steps {
+                echo "This is the deploying on prod stage"
+            }
+        }
+    }
+    post {
+        always {
+            echo "This message will always print"
+        }
+        success {
+            echo "Pipeline executed successfully"
+        }
+        failure {
+            echo "Pipeline execution failed"
+        }
+    }
+}
