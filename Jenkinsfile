@@ -29,6 +29,14 @@ pipeline{
                 echo "this is deploying on prod stage"
             }
         }
+         stage("shell-script"){
+            steps{
+                sh '''pwd
+                        ls
+                      date
+                   ls -la'''
+            }
+        }
   }
      post{
         always{
