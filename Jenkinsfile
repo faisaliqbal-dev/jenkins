@@ -28,6 +28,7 @@ pipeline{
              input {
                  message "should we cotinue"
                  ok "yes"
+             }
             steps{
                 echo " deploying on prod stage"
             }
