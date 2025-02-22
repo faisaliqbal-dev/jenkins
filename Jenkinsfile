@@ -3,7 +3,7 @@ pipeline{
     parameters {
         string (name: "faisal" , defaultValue: "faisal" , description: "who are you?")
         booleanParam (name: "ismale" , defaultValue: true , description: "who are you?")
-        choice (name: city , choices: ['nanded' , 'nagpur' , 'mumbai' , 'pune'] , description: "select your city")
+        choice (name: 'city' , choices: ['nanded' , 'nagpur' , 'mumbai' , 'pune'] , description: "select your city")
     }
     environment {
         name = 'faisal'
