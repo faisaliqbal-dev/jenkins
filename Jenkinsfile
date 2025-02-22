@@ -24,6 +24,14 @@ pipeline{
                 echo "my name is ${name}"
             }
         }
+        stage("continue?"){
+             input {
+                 message "should we cotinue"
+                 ok "yes"
+            steps{
+                echo " deploying on prod stage"
+            }
+        }
         stage("deploy-on-prod"){
             steps{
                 echo "this is deploying on prod stage"
